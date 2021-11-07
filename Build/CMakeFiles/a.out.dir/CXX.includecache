@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Display.h
+iostream
+-
+
+../include/Doc.h
+iostream
+-
+memory
+-
+Proxy.h
+../include/Proxy.h
+
+../include/Page.h
+iostream
+-
+Display.h
+../include/Display.h
+
+../include/Proxy.h
+iostream
+-
+memory
+-
+Display.h
+../include/Display.h
+Page.h
+../include/Page.h
+
+/mnt/c/Users/vanessa.e.lungu/DesignPatterns/Structural/Proxy/src/main.cpp
+iostream
+-
+memory
+-
+Proxy.h
+/mnt/c/Users/vanessa.e.lungu/DesignPatterns/Structural/Proxy/src/Proxy.h
+Doc.h
+/mnt/c/Users/vanessa.e.lungu/DesignPatterns/Structural/Proxy/src/Doc.h
+

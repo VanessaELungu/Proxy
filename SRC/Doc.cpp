@@ -5,5 +5,25 @@
 
 using namespace std;
 
-D
+void Document::initProxy(){};
 
+Document::Document()
+{
+    cout << "" << endl;
+    initProxy();
+}
+
+Document::~Document()
+{
+    cout << "" << endl;
+}
+
+void Document::open(int pageNumber)
+{
+    _proxy.displayContent(pageNumber);
+}
+
+void Document::changePage(int pageNumber)
+{
+    _proxy.displayContent(pageNumber);
+}

@@ -14,11 +14,11 @@ class Document
     Document();
     ~Document();
     
-    void open(int page);
+    void open(int page = 1);
     void initProxy();
-    void changePage(int number);
+    void changePage(int pageNumber);
 
-    
+    Proxy _proxy;
 };
 
 #endif

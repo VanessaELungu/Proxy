@@ -59,9 +59,6 @@ getPage()->displayImage();
 break;
 
 case 37:
-
-getPage()->displayText();
-
 getPage()->displayImage();
 
 break;

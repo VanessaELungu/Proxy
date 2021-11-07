@@ -12,7 +12,7 @@ class Display
     virtual ~Display(){};
 
     virtual void displayText()  = 0;
-    virtual void displatImage() = 0;
+    virtual void displayImage() = 0;
     virtual void displayEmpty() = 0;
 
 };

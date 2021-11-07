@@ -16,13 +16,13 @@ class Proxy : public Display
     ~Proxy();
 
     void displayText()  override;
-    void displatImage() override;
+    void displayImage() override;
     void displayEmpty() override;
 
     void setCurrentPage(int currentPage);
-    const int getCurrentPage const;
+    const int getCurrentPage();
     shared_ptr<Page> getPage();
-    void displayContent(int page);
+    void displayContent(int pageNumber);
 
     int _currentPage;
     shared_ptr<Page> _page;
