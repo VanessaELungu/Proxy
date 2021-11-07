@@ -1,12 +1,9 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(CMakeLists VERSION 0.1.0)
+cmake_minimum_required(VERSION 3.10)
+project(Proxy)
 
 include(CTest)
 enable_testing()
 
-<<<<<<< Updated upstream
-add_executable(CMakeLists main.cpp)
-=======
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Debug)
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Release)
 
@@ -24,11 +21,10 @@ ADD_CUSTOM_TARGET(release
   WORKING_DIRECTORY Release
   )
 
-include_directories(include)
-file(GLOB SOURCES "src/*.cpp")
-
-add_executable(a.out ${SOURCES})
->>>>>>> Stashed changes
+  include_directories(include)
+  file(GLOB SOURCES "src/*.cpp")
+  
+  add_executable(a.out ${SOURCES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
