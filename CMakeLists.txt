@@ -4,6 +4,13 @@ project(Proxy)
 include(CTest)
 enable_testing()
 
+find_program(VALGRIND "valgrind")
+if(VALGRIND)
+    add_custom_target(valgrind 
+    COMMAND "${VALGRIND}" --tool=memcheck --leak-check=full --show-reachable=yes 
+    --num-callers=20 --track-fds=yes $<TARGET_FILE:a.out>)
+endif()
+
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Debug)
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Release)
 
