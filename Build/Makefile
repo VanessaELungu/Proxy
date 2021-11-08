@@ -157,6 +157,19 @@ release/fast:
 .PHONY : release/fast
 
 #=============================================================================
+# Target rules for targets named debug
+
+# Build rule for target.
+debug: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 debug
+.PHONY : debug
+
+# fast build rule for target.
+debug/fast:
+	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/build
+.PHONY : debug/fast
+
+#=============================================================================
 # Target rules for targets named NightlyMemCheck
 
 # Build rule for target.
@@ -168,19 +181,6 @@ NightlyMemCheck: cmake_check_build_system
 NightlyMemCheck/fast:
 	$(MAKE) -f CMakeFiles/NightlyMemCheck.dir/build.make CMakeFiles/NightlyMemCheck.dir/build
 .PHONY : NightlyMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named NightlyTest
-
-# Build rule for target.
-NightlyTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
-.PHONY : NightlyTest
-
-# fast build rule for target.
-NightlyTest/fast:
-	$(MAKE) -f CMakeFiles/NightlyTest.dir/build.make CMakeFiles/NightlyTest.dir/build
-.PHONY : NightlyTest/fast
 
 #=============================================================================
 # Target rules for targets named ContinuousConfigure
@@ -222,6 +222,32 @@ NightlyConfigure/fast:
 .PHONY : NightlyConfigure/fast
 
 #=============================================================================
+# Target rules for targets named NightlyTest
+
+# Build rule for target.
+NightlyTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	$(MAKE) -f CMakeFiles/NightlyTest.dir/build.make CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+#=============================================================================
+# Target rules for targets named valgrind
+
+# Build rule for target.
+valgrind: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 valgrind
+.PHONY : valgrind
+
+# fast build rule for target.
+valgrind/fast:
+	$(MAKE) -f CMakeFiles/valgrind.dir/build.make CMakeFiles/valgrind.dir/build
+.PHONY : valgrind/fast
+
+#=============================================================================
 # Target rules for targets named NightlyMemoryCheck
 
 # Build rule for target.
@@ -259,19 +285,6 @@ ContinuousUpdate: cmake_check_build_system
 ContinuousUpdate/fast:
 	$(MAKE) -f CMakeFiles/ContinuousUpdate.dir/build.make CMakeFiles/ContinuousUpdate.dir/build
 .PHONY : ContinuousUpdate/fast
-
-#=============================================================================
-# Target rules for targets named debug
-
-# Build rule for target.
-debug: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 debug
-.PHONY : debug
-
-# fast build rule for target.
-debug/fast:
-	$(MAKE) -f CMakeFiles/debug.dir/build.make CMakeFiles/debug.dir/build
-.PHONY : debug/fast
 
 #=============================================================================
 # Target rules for targets named NightlyUpdate
@@ -664,16 +677,17 @@ help:
 	@echo "... test"
 	@echo "... package_source"
 	@echo "... release"
+	@echo "... debug"
 	@echo "... edit_cache"
 	@echo "... NightlyMemCheck"
-	@echo "... NightlyTest"
 	@echo "... ContinuousConfigure"
 	@echo "... ContinuousBuild"
 	@echo "... NightlyConfigure"
+	@echo "... NightlyTest"
+	@echo "... valgrind"
 	@echo "... NightlyMemoryCheck"
 	@echo "... ExperimentalTest"
 	@echo "... ContinuousUpdate"
-	@echo "... debug"
 	@echo "... NightlyUpdate"
 	@echo "... ExperimentalMemCheck"
 	@echo "... ExperimentalSubmit"
